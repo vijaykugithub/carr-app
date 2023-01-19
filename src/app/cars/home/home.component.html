@@ -1,0 +1,71 @@
+<div class="container mt-2">
+    <button type="button" class="btn btn-primary my-sm-0" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="openCarModal()">
+    Add A New Car
+</button>
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Car Number</th>
+      <th scope="col">Car Owner</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of cars$ | async">
+      <th scope="row">{{item.id}}</th>
+      <td>{{item.carNumberPlate}}</td>
+      <td>{{item.carOwner}}</td>
+      <td>
+      <a class="edit" title="Edit" (click)="editCar(item)" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+      <a class="delete" (click)="deleteCar(item.id)" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="modal fade"  id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Car Details</h1>
+        <button type="button" class="btn-close" (click)="closeCarModal()"  aria-label="Close"></button>
+      </div>
+      <form [formGroup]="carformGroup">
+      <div class="modal-body">
+      <div class="mb-3">
+        <label for="carNumberPlate" class="form-label">Car number plate</label>
+        <input type="text" formControlName="carNumberPlate" class="form-control" name="carNumberPlate" id="carNumberPlate" aria-describedby="carNumberPlate" [class.is-invalid]="carNumberPlate.invalid && (carNumberPlate.dirty || carNumberPlate.touched)">
+        <div *ngIf="carNumberPlate.invalid && (carNumberPlate.dirty || carNumberPlate.touched)" class="invalid-feedback">
+            <div *ngIf="carNumberPlate.errors?.['required']">
+              This field is required.
+            </div>
+            <div *ngIf="carNumberPlate.errors?.['maxlength']">
+              This field have maximum 6 character.
+            </div>
+            <div *ngIf="carNumberPlate.errors?.['minlength']">
+            This field have minimum 6 character.
+          </div>
+          </div>
+      </div>
+      <div class="mb-3">
+        <label for="carOwner" class="form-label">Owner name</label>
+        <input type="text" class="form-control" formControlName="carOwner" id="carOwner" name="carOwner" [class.is-invalid]="carOwner.invalid && (carOwner.dirty || carOwner.touched)">
+        <div *ngIf="carOwner.invalid && (carOwner.dirty || carOwner.touched)" class="invalid-feedback">
+            <div *ngIf="carOwner.errors?.['required']">
+              This field is required.
+            </div>
+          </div>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"  (click)="closeCarModal()">Close</button>
+        <button type="button" *ngIf="showAdd" class="btn btn-primary" (click)="validate()">Save</button>
+        <button type="button" *ngIf="showUpdate" class="btn btn-primary" (click)="updateCar()">Update</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+    </div>

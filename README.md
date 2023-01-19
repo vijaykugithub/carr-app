@@ -1,6 +1,8 @@
-# WalkWithDog
+# car crud application
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+### to run the server first run the below command
+Run `npm run json-run`for a dev server. Navigate to `http://localhost:3000/cars`.
 
 ## Development server
 

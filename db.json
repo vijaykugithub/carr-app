@@ -1,0 +1,29 @@
+{
+  "cars": [
+    {
+      "id": 7300,
+      "carNumberPlate": "ABC567",
+      "carOwner": "ASW123456"
+    },
+    {
+      "id": 6602,
+      "carNumberPlate": "ASW123",
+      "carOwner": "Test1"
+    },
+    {
+      "id": 2635,
+      "carNumberPlate": "ABC567",
+      "carOwner": "ASW123456"
+    },
+    {
+      "id": 439,
+      "carNumberPlate": "ABC567",
+      "carOwner": "ASW123456"
+    },
+    {
+      "id": 5682,
+      "carNumberPlate": "ABC567",
+      "carOwner": "ASW123456"
+    }
+  ]
+}
