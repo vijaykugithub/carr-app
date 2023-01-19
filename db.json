@@ -11,19 +11,9 @@
       "carOwner": "Test1"
     },
     {
-      "id": 2635,
-      "carNumberPlate": "ABC567",
-      "carOwner": "ASW123456"
-    },
-    {
-      "id": 439,
-      "carNumberPlate": "ABC567",
-      "carOwner": "ASW123456"
-    },
-    {
-      "id": 5682,
-      "carNumberPlate": "ABC567",
-      "carOwner": "ASW123456"
+      "id": 245,
+      "carNumberPlate": "TES765",
+      "carOwner": "TES765 Test"
     }
   ]
 }
